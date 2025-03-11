@@ -18,10 +18,11 @@ export async function getAllActivities() {
 }
 
 // Récupérer tous les acteurs et réalisateurs triés par ordre alphabétique
-export async function getAllParticipants() {
-  return await pb.collection("participants").getFullList({
-    sort: "nom",
+export async function getAllInvites() {
+  return await pb.collection("Invites").getFullList({
+    sort: "Nom",
   });
+  return Invites;
 }
 
 // Récupérer les infos d'un film par son ID
