@@ -42,29 +42,30 @@
 // import { getActivityById } from "./backend.mjs";
 // try {
 //   const activite = await getActivityById("v7np2r9hh280b31");
-//   console.log("Activité:", activite);
+//   console.log("activite:", activite);
 // } catch (e) {
 //   console.error(e);
 // }
 
 // // Tester la récupération d'un invite par ID
-import { getinvitesById } from "./backend.mjs";
-try {
-  const invites = await getinvitesById("77q8679j8h3kf78");
-  console.log("invités:", invites);
-} catch (e) {
-  console.error(e);
-}
-
-// // Tester la récupération des activités d’un animateur par ID
+// import { getinvitesById } from "./backend.mjs";
 // try {
-//   const activitiesByAnimator = await getActivitiesByAnimatorId(
-//     "animateur_id_exemple"
-//   );
-//   console.log("Activités de l'animateur:", activitiesByAnimator);
+//   const invites = await getinvitesById("77q8679j8h3kf78");
+//   console.log("invités:", invites);
 // } catch (e) {
 //   console.error(e);
 // }
+
+// // Tester la récupération des activités d’un animateur par ID
+import { getActivitiesByAnimatorId } from "./backend.mjs";
+try {
+  const activitiesByAnimator = await getActivitiesByAnimatorId(
+    "4h93d4759unr1ot"
+  );
+  console.log("Activités de l'animateur:", activitiesByAnimator);
+} catch (e) {
+  console.error(e);
+}
 
 // // Tester la récupération des activités d’un animateur par nom
 // try {
