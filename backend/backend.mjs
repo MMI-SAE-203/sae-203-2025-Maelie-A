@@ -53,19 +53,12 @@ export async function getActivitiesByAnimatorId(id) {
 }
 
 // Récupérer toutes les activités d’un animateur donné par son nom
-export async function getActivitiesByAnimatorName(nom) {
-  const animateurs = await pb.collection("animateurs").getFullList({
-    filter: `nom = "${nom}"`,
-    expand: "activites",
-  });
-  return animateurs;
+export async function getActivitiesByAnimatorName(Nom) {
+  const Activite = await pb.collection("Invites").getFullList(`Nom = "${Nom}"`);
+    return await getActivitiesByAnimatorId(Activite.id);
 }
 
-// Ajouter ou modifier un film, une activité ou un invité
-export async function upsertItem(collection, id, data) {
-  if (id) {
-    return await pb.collection(collection).update(id, data);
-  } else {
-    return await pb.collection(collection).create(data);
-  }
-}
+
+
+
+

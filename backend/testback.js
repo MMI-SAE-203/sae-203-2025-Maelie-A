@@ -1,5 +1,3 @@
-
-
 // Tester la récupération de tous les films
 // import { getAllFilms } from "./backend.mjs";
 // try {
@@ -57,33 +55,24 @@
 // }
 
 // // Tester la récupération des activités d’un animateur par ID
-import { getActivitiesByAnimatorId } from "./backend.mjs";
-try {
-  const activitiesByAnimator = await getActivitiesByAnimatorId(
-    "4h93d4759unr1ot"
-  );
-  console.log("Activités de l'animateur:", activitiesByAnimator);
-} catch (e) {
-  console.error(e);
-}
+// import { getActivitiesByAnimatorId } from "./backend.mjs";
+// try {
+//   const activitiesByAnimator = await getActivitiesByAnimatorId(
+//     "4h93d4759unr1ot"
+//   );
+//   console.log("Activités de l'animateur:", activitiesByAnimator);
+// } catch (e) {
+//   console.error(e);
+// }
 
 // // Tester la récupération des activités d’un animateur par nom
+// import { getActivitiesByAnimatorName } from "./backend.mjs";
 // try {
-//   const activitiesByName = await getActivitiesByAnimatorName("Nom Animateur");
-//   console.log("Activités de l'animateur (nom):", activitiesByName);
+//   const activitiesByName = await getActivitiesByAnimatorName("Roiland");
+//   console.log("Activités de l'animateur (Nom):", activitiesByName);
 // } catch (e) {
 //   console.error(e);
 // }
 
-// // Tester l'ajout/modification d'un film
-// try {
-//   const newFilm = {
-//     titre: "Nouveau Film",
-//     dateProjection: "2025-05-10",
-//     realisateur: "Réalisateur Exemple",
-//   };
-//   const result = await upsertItem("films", null, newFilm);
-//   console.log("Film ajouté/modifié:", result);
-// } catch (e) {
-//   console.error(e);
-// }
+
+
