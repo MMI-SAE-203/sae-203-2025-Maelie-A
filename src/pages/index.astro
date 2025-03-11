@@ -1,11 +1,39 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Dehors from '../assets/dehors.avif';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+
+<Layout title="Lionimation Festival" description="Découvrez l'univers magique de l'animation à Belfort !">
+  <section class="hero text-center p-4">
+    <h1 class="text-3xl font-bold text-pink-600">Lionimation Festival</h1>
+    <p class="text-lg font-semibold">Plongez dans l’univers magique de l’animation et découvrez ses multiples facettes.</p>
+  </section>
+  
+  <section class="about p-4">
+    <h2 class="text-2xl font-bold text-pink-600">Lionimation Festival</h2>
+    <img src="/images/festival-outdoor.jpg" alt="Festival en plein air" class="w-full rounded-lg" />
+    <p class="text-lg">Le Lionimation Festival est un événement incontournable pour tous les passionnés de l’animation audiovisuelle !</p>
+<img src="/assets/dehors.avif" alt="Projection cinéma" class="w-full rounded-lg mt-4" />
+
+    <p class="text-lg">Pendant une semaine, explorez les différents styles d’animation, des classiques comme Disney aux techniques expérimentales, à travers des projections, des ateliers éducatifs et bien plus encore. Rejoignez-nous à Belfort pour cette première édition qui promet émerveillement et apprentissage pour petits et grands !</p>
+  </section>
+  
+  <section class="highlight text-center p-4">
+    <blockquote class="text-xl font-bold text-pink-600">“Le 8 juin 2025 à Belfort, 1 jour de magie animée pour petits et grands.”</blockquote>
+  </section>
+  
+  <section class="styles-animation p-4 text-center">
+    <h2 class="text-2xl font-bold">Découvrez la diversité des styles d'animation</h2>
+    <img src="/images/popcorn-animation.png" alt="Illustration styles animation" class="mx-auto" />
+    <a href="#" class="btn bg-purple-600 text-white py-2 px-4 rounded-lg">Voir la programmation</a>
+  </section>
+  
+  <section class="cta p-4 text-center">
+    <a href="#" class="btn bg-green-500 text-white py-2 px-4 rounded-lg">Billetterie</a>
+    <a href="#" class="btn bg-gray-500 text-white py-2 px-4 rounded-lg">Infos pratiques</a>
+  </section>
+  
 </Layout>
+
