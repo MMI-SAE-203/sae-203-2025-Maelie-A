@@ -27,8 +27,11 @@ export async function getAllInvites() {
 
 // Récupérer les infos d'un film par son ID
 export async function getFilmById(id) {
-  return await pb.collection("films").getOne(id);
+  return await pb.collection("Film").getOne(id);
+  return Film;
 }
+
+
 
 // Récupérer les infos d'une activité par son ID
 export async function getActivityById(id) {

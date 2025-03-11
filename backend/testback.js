@@ -9,7 +9,7 @@
 //   console.error(e);
 // }
 
-import { getAllInvites } from "./backend.mjs";
+
 
 // Tester la récupération de toutes les activités
 // import { getAllActivities } from "./backend.mjs";
@@ -21,6 +21,7 @@ import { getAllInvites } from "./backend.mjs";
 // }
 
 // // Tester la récupération de tous les invités
+// import { getAllInvites } from "./backend.mjs";
 // try {
 //   const Invites = await getAllInvites();
 //   console.log("Invités triés par nom:", Invites);
@@ -29,20 +30,21 @@ import { getAllInvites } from "./backend.mjs";
 // }
 
 // // Tester la récupération d'un film par ID
-try {
-  const film = await getFilmById("film_id_exemple");
-  console.log("Film:", film);
-} catch (e) {
-  console.error(e);
-}
-
-// // Tester la récupération d'une activité par ID
+// import { getFilmById } from "./backend.mjs";
 // try {
-//   const activity = await getActivityById("activity_id_exemple");
-//   console.log("Activité:", activity);
+//   const Film = await getFilmById("59958781p2d3571");
+//   console.log("Film:", Film);
 // } catch (e) {
 //   console.error(e);
 // }
+
+// // Tester la récupération d'une activité par ID
+try {
+  const activity = await getActivityById("activity_id_exemple");
+  console.log("Activité:", activity);
+} catch (e) {
+  console.error(e);
+}
 
 // // Tester la récupération d'un participant par ID
 // try {
