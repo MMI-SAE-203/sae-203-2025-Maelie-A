@@ -39,9 +39,10 @@
 // }
 
 // // Tester la récupération d'une activité par ID
+import { getActivityById } from "./backend.mjs";
 try {
-  const activity = await getActivityById("activity_id_exemple");
-  console.log("Activité:", activity);
+  const activite = await getActivityById("v7np2r9hh280b31");
+  console.log("Activité:", activite);
 } catch (e) {
   console.error(e);
 }

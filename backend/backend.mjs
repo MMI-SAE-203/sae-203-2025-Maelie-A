@@ -35,7 +35,7 @@ export async function getFilmById(id) {
 
 // Récupérer les infos d'une activité par son ID
 export async function getActivityById(id) {
-  return await pb.collection("activites").getOne(id);
+  return await pb.collection("activite").getOne(id);
 }
 
 // Récupérer les infos d'un acteur ou réalisateur par son ID
