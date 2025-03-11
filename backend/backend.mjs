@@ -36,11 +36,13 @@ export async function getFilmById(id) {
 // Récupérer les infos d'une activité par son ID
 export async function getActivityById(id) {
   return await pb.collection("activite").getOne(id);
+    return activite;
 }
 
 // Récupérer les infos d'un acteur ou réalisateur par son ID
-export async function getParticipantById(id) {
-  return await pb.collection("participants").getOne(id);
+export async function getinvitesById(id) {
+  return await pb.collection("invites").getOne(id);
+  return invites;
 }
 
 // Récupérer toutes les activités d’un animateur donné par son ID

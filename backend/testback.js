@@ -39,21 +39,22 @@
 // }
 
 // // Tester la récupération d'une activité par ID
-import { getActivityById } from "./backend.mjs";
-try {
-  const activite = await getActivityById("v7np2r9hh280b31");
-  console.log("Activité:", activite);
-} catch (e) {
-  console.error(e);
-}
-
-// // Tester la récupération d'un participant par ID
+// import { getActivityById } from "./backend.mjs";
 // try {
-//   const participant = await getParticipantById("participant_id_exemple");
-//   console.log("Participant:", participant);
+//   const activite = await getActivityById("v7np2r9hh280b31");
+//   console.log("Activité:", activite);
 // } catch (e) {
 //   console.error(e);
 // }
+
+// // Tester la récupération d'un invite par ID
+import { getinvitesById } from "./backend.mjs";
+try {
+  const invites = await getinvitesById("77q8679j8h3kf78");
+  console.log("invités:", invites);
+} catch (e) {
+  console.error(e);
+}
 
 // // Tester la récupération des activités d’un animateur par ID
 // try {
