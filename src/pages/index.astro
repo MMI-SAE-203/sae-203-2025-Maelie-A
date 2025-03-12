@@ -1,39 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Dehors from '../assets/dehors.avif';
-
+import dehors from '../assets/dehors.avif';
+import mascottes from '../assets/mascottes.avif';
+import popcorn from '../assets/popcorn.avif';
+import cine from '../assets/cine.avif';
+import Logo from '../assets/Logo.svg';
+import petalehaut from '../assets/petalehaut.svg';
+import petalebas from '../assets/petalebas.svg';
 ---
 
 
 <Layout title="Lionimation Festival" description="Découvrez l'univers magique de l'animation à Belfort !">
-  <section class="hero text-center p-4">
-    <h1 class="text-3xl font-bold text-pink-600">Lionimation Festival</h1>
-    <p class="text-lg font-semibold">Plongez dans l’univers magique de l’animation et découvrez ses multiples facettes.</p>
-  </section>
+<section class="hero text-center p-4">
+    <div class="mb-8">
+      <img src={Logo.src} alt="Lionimation Festival" class="w-60 h-auto mx-auto" />
+    </div>
+
+    <div class="relative flex flex-col items-center text-center w-full max-w-3xl mx-auto">
+
+        <img src={petalehaut.src} alt="Lionimation Festival" 
+            class="w-20 h-auto absolute top-0 left-0 transform -translate-x-10 -translate-y-14" />
+        
+
+        <p class="text-lg font-semibold text-purple-950 relative z-20 px-4">
+            Plongez dans l’univers magique de l’animation et découvrez ses multiples facettes.
+        </p>
+
+        <img src={petalebas.src} alt="Lionimation Festival" 
+            class="w-20 h-auto absolute bottom-0 right-0 transform translate-x-10 translate-y-4" />
+    </div>
+</section>
+
   
   <section class="about p-4">
-    <h2 class="text-2xl font-bold text-pink-600">Lionimation Festival</h2>
-    <img src="/images/festival-outdoor.jpg" alt="Festival en plein air" class="w-full rounded-lg" />
-    <p class="text-lg">Le Lionimation Festival est un événement incontournable pour tous les passionnés de l’animation audiovisuelle !</p>
-<img src="/assets/dehors.avif" alt="Projection cinéma" class="w-full rounded-lg mt-4" />
+    <h2 class="text-2xl font-sans text-pink-500">Lionimation Festival</h2>
+<img src={dehors.src} alt="Projection cinéma" class="w-full rounded-lg mt-4" />
+    <p class="text-lg font-mono">Le Lionimation Festival est un événement incontournable pour tous les passionnés de l’animation audiovisuelle !</p>
+<img src={cine.src} alt="Projection cinéma" class="w-full rounded-lg mt-4" />
 
-    <p class="text-lg">Pendant une semaine, explorez les différents styles d’animation, des classiques comme Disney aux techniques expérimentales, à travers des projections, des ateliers éducatifs et bien plus encore. Rejoignez-nous à Belfort pour cette première édition qui promet émerveillement et apprentissage pour petits et grands !</p>
+    <p class="text-lg font-mono">Pendant une semaine, explorez les différents styles d’animation, des classiques comme Disney aux techniques expérimentales, à travers des projections, des ateliers éducatifs et bien plus encore. Rejoignez-nous à Belfort pour cette première édition qui promet émerveillement et apprentissage pour petits et grands !</p>
   </section>
   
   <section class="highlight text-center p-4">
-    <blockquote class="text-xl font-bold text-pink-600">“Le 8 juin 2025 à Belfort, 1 jour de magie animée pour petits et grands.”</blockquote>
+    <blockquote class="text-xl font-sans text-pink-500">“Le 8 juin 2025 à Belfort, 1 jour de magie animée pour petits et grands.”</blockquote>
   </section>
   
   <section class="styles-animation p-4 text-center">
-    <h2 class="text-2xl font-bold">Découvrez la diversité des styles d'animation</h2>
-    <img src="/images/popcorn-animation.png" alt="Illustration styles animation" class="mx-auto" />
-    <a href="#" class="btn bg-purple-600 text-white py-2 px-4 rounded-lg">Voir la programmation</a>
+    <h2 class="text-2xl text-purple-950 font-sans">Découvrez la diversité des styles d'animation</h2>
+    <img src={mascottes.src} alt="Illustration styles animation" class="mx-auto" />
+    <a href="#" class="btn font-mono bg-purple-950 text-white py-6 px-7 rounded-lg self-start">Voir la programmation</a>
   </section>
   
-  <section class="cta p-4 text-center">
-    <a href="#" class="btn bg-green-500 text-white py-2 px-4 rounded-lg">Billetterie</a>
-    <a href="#" class="btn bg-gray-500 text-white py-2 px-4 rounded-lg">Infos pratiques</a>
-  </section>
+<section class="cta p-4 text-center">
+    <img src={popcorn.src} alt="Illustration styles animation" class="mx-auto mb-4" />
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="btn font-mono bg-green-500 text-white py-3 px-5 rounded-lg text-center">
+            Billetterie
+        </a>
+        <a href="#" class="btn font-mono bg-purple-950 text-white py-3 px-5 rounded-lg text-center">
+            Infos pratiques
+        </a>
+    </div>
+</section>
+
   
 </Layout>
 

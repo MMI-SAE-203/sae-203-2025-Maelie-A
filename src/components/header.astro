@@ -1,43 +1,52 @@
 ---
-// import Logo from '../assets/icons/IconLogo.svg';
+import Logo from '../assets/Logo.svg';
 // import Button from '../components/Button.astro';
 const currentPath = Astro.url.pathname;
 ---
 		<meta charset="UTF-8">
-<header class="flex items-center justify-between px-4 gap-8 border-b-2 border-b-pink-400 h-20 bg-purple-900 text-white">
-  <!-- <a href="/">
-    <Logo class="h-12" />
-  </a> -->
+    <main class="pt-20"></main>
+<header class="fixed top-0 left-0 w-full flex items-center justify-between gap-8 border-b-2 border-b-pink-500 h-20 bg-purple-950 text-white z-50">
+
+<div class="self-center mt-1">
+  <img src={Logo.src} alt="Lionimation Festival" class="w-20 h-auto" />
+</div>
+
+
 <button
     id="menu-btn"
-    class="group relative z-10 flex h-3 w-6 flex-col justify-between lg:hidden ml-auto *:block *:ease *:h-0.5 *:w-full *:transform *:rounded-full *:bg-white *:transition *:duration-300"
+    class="group relative z-10 flex h-3 w-6 flex-col justify-between lg:hidden mr-4 *:block *:ease *:h-0.5 *:w-full *:transform *:rounded-full *:bg-pink-500 *:transition *:duration-300"
     aria-label="Menu"
     aria-controls="menu"
     aria-expanded="false"
 >
+
     <span class="group-aria-expanded:translate-y-[5px] group-aria-expanded:rotate-45"></span>
     <span class="group-aria-expanded:-translate-y-[5px] group-aria-expanded:-rotate-45"></span>
   </button>
-  <nav
-    id="menu"
-    class="flex-1 px-6 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-purple-900 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
-    aria-hidden="true"
-  >
+<nav id="menu"
+  class="w-full flex-1 px-6 py-12 flex justify-between top-20 flex-col fixed z-40 inset-0 bg-purple-950 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:top-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
+  aria-hidden="true"
+>
+
+
     <ul class="flex flex-col gap-4 lg:flex-row">
       <li>
-        <a class={`block p-4 rounded-lg ${currentPath === '/about' ? 'text-pink-400 font-bold max-lg:bg-pink-600' : 'text-white'}`} href="/about">À Propos</a>
+        <a class={`block p-4 rounded-lg ${currentPath === '/about' ? 'text-pink-500 font-bold max-lg:bg-pink-500' : 'text-pink-500'}`} href="/about">À Propos</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-white" href="/programmation">Programmation</a>
+        <a class="block p-4 rounded-lg text-green-400" href="/programmation">Programme</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-white" href="/billetterie">Billetterie</a>
+        <a class="block p-4 rounded-lg text-orange-400" href="/billetterie">Film</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-white" href="/infos">Infos Pratiques</a>
+        <a class="block p-4 rounded-lg text-pink-500" href="/infos">Invités</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-white" href="/contact">Contact</a>
+        <a class="block p-4 rounded-lg text-green-400" href="/contact">Infos pratiques</a>
+      </li>
+            <li>
+        <a class="block p-4 rounded-lg text-orange-400" href="/contact">Contactez-nous</a>
       </li>
     </ul>
     <!-- <div class="flex items-center justify-center gap-4 px-4">
