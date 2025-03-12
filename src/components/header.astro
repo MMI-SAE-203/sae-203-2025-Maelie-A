@@ -1,5 +1,6 @@
 ---
 import Logo from '../assets/Logo.svg';
+import Apropos from '../pages/apropos.astro';
 // import Button from '../components/Button.astro';
 const currentPath = Astro.url.pathname;
 ---
@@ -31,22 +32,19 @@ const currentPath = Astro.url.pathname;
 
     <ul class="flex flex-col gap-4 lg:flex-row">
       <li>
-        <a class={`block p-4 rounded-lg ${currentPath === '/about' ? 'text-pink-500 font-bold max-lg:bg-pink-500' : 'text-pink-500'}`} href="/about">À Propos</a>
+        <a class={`block p-4 rounded-lg ${currentPath === '/about' ? 'text-pink-500 font-bold max-lg:bg-pink-500' : 'text-pink-500'}`} href="/apropos">À Propos</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-green-400" href="/programmation">Programme</a>
+        <a class="block p-4 rounded-lg text-green-400" href="/programme">Programme</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-orange-400" href="/billetterie">Film</a>
+        <a class="block p-4 rounded-lg text-orange-400" href="/invites">Invités</a>
       </li>
       <li>
-        <a class="block p-4 rounded-lg text-pink-500" href="/infos">Invités</a>
-      </li>
-      <li>
-        <a class="block p-4 rounded-lg text-green-400" href="/contact">Infos pratiques</a>
+        <a class="block p-4 rounded-lg text-pink-500" href="/infos">Infos pratiques</a>
       </li>
             <li>
-        <a class="block p-4 rounded-lg text-orange-400" href="/contact">Contactez-nous</a>
+        <a class="block p-4 rounded-lg text-green-400" href="/contact">Contactez-nous</a>
       </li>
     </ul>
     <!-- <div class="flex items-center justify-center gap-4 px-4">
