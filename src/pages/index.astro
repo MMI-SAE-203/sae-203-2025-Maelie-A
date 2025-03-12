@@ -7,6 +7,9 @@ import cine from '../assets/cine.avif';
 import Logo from '../assets/Logo.svg';
 import petalehaut from '../assets/petalehaut.svg';
 import petalebas from '../assets/petalebas.svg';
+import parte from '../assets/parte.avif';
+import parte2 from '../assets/parte2.avif';
+import parte3 from '../assets/parte3.avif';
 ---
 
 
@@ -22,9 +25,10 @@ import petalebas from '../assets/petalebas.svg';
             class="w-20 h-auto absolute top-0 left-0 transform -translate-x-10 -translate-y-14" />
         
 
-        <p class="text-lg font-semibold text-purple-950 relative z-20 px-4">
-            Plongez dans l’univers magique de l’animation et découvrez ses multiples facettes.
-        </p>
+<p class="text-2xl font-semibold text-purple-950 relative z-20 px-4 text-center">
+  Plongez dans l’univers magique de l’animation et découvrez ses multiples facettes.
+</p>
+
 
         <img src={petalebas.src} alt="Lionimation Festival" 
             class="w-20 h-auto absolute bottom-0 right-0 transform translate-x-10 translate-y-4" />
@@ -51,19 +55,34 @@ import petalebas from '../assets/petalebas.svg';
     <a href="#" class="btn font-mono bg-purple-950 text-white py-6 px-7 rounded-lg self-start">Voir la programmation</a>
   </section>
   
-<section class="cta p-4 text-center">
-    <img src={popcorn.src} alt="Illustration styles animation" class="mx-auto mb-4" />
+<section class="cta p-6 text-center space-y-8">
+    <img src={popcorn.src} alt="Illustration styles animation" class="mx-auto mb-6" />
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#" class="btn font-mono bg-green-500 text-white py-3 px-5 rounded-lg text-center">
+    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#" class="btn font-mono bg-green-500 text-white py-3 px-8 rounded-lg text-center text-lg">
             Billetterie
         </a>
-        <a href="#" class="btn font-mono bg-purple-950 text-white py-3 px-5 rounded-lg text-center">
+        <a href="#" class="btn font-mono bg-purple-950 text-white py-3 px-8 rounded-lg text-center text-lg">
             Infos pratiques
         </a>
     </div>
 </section>
 
-  
+<div class="flex flex-col items-center mb-10 space-y-6">
+    <p class="text-pink-500 text-2xl font-bold text-center">Nos partenaires</p>
+
+    <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+        <a href="#" aria-label="parte1" class="transition-colors flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36">
+            <img src={parte.src} alt="parte1" class="object-contain w-full h-full" />
+        </a>
+        <a href="#" aria-label="parte2" class="transition-colors flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36">
+            <img src={parte2.src} alt="parte2" class="object-contain w-full h-full" />
+        </a>
+        <a href="#" aria-label="parte3" class="transition-colors flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36">
+            <img src={parte3.src} alt="parte3" class="object-contain w-full h-full" />
+        </a>
+    </div>
+</div>
+
 </Layout>
 
