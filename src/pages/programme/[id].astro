@@ -1,0 +1,70 @@
+---
+import { getFilmById } from '../../../backend/backend.mjs';
+import Layout from '../../layouts/Layout.astro';
+
+const { id } = Astro.params;
+const film = await getFilmById(id);
+
+if (!film) {
+    return Astro.redirect('/films');
+}
+---
+
+<Layout>
+  <div class="bg-white min-h-screen flex items-center justify-center mt-6 mb-6 px-4">
+    <div class="bg-purple-950 text-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
+      <div class="flex flex-col md:flex-row">
+        <!-- Image du film -->
+        <div class="md:w-1/3 w-full">
+          <img 
+            src={film.imageUrl} 
+            alt={`Affiche de ${film.titre_film}`} 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        
+        <!-- Détails du film -->
+        <div class="md:w-2/3 w-full p-6">
+          <h1 class="text-4xl font-sans text-pink-500 mb-2 text-center md:text-left">
+            {film.Titre_film}
+          </h1>
+        <p class="text-1xl font-mono text-gray-300 mb-4 text-center md:text-left">
+            {film.dateProjection}  
+          </p>
+          
+          <p class="text-1xl font-mono text-gray-300 mb-4 text-center md:text-left">
+            {film.Duree_film} min • {film.langue}
+          </p>
+
+        
+          <p class="text-1xl font-mono text-gray-300 mb-4 text-center md:text-left">
+            {film.production}</p>
+          
+
+          <!-- Synopsis -->
+          <div class="mb-6">
+            <h2 class="text-xl font-sans text-orange-400 mb-2">Synopsis</h2>
+            <p class="text-1xl font-mono text-gray-300 mb-4 text-center md:text-left" set:html={film.synopsis}></p>
+          </div>
+
+          <!-- Informations -->
+          <div class="mb-6">
+            <h2 class="text-xl font-sans text-pink-500 mb-2">Informations</h2>
+            <ul class="space-y-2 text-gray-200">
+              <li><span class="font-medium">Réalisateur :</span> {film.realisateur}</li>
+              <li><span class="font-medium">Personnages :</span> {film.liste_personnages}</li>
+              <li><span class="font-medium">Date de publication :</span> {film.date_publication}</li>
+            </ul>
+          </div>
+
+          <!-- Bouton de retour -->
+          <div class="mt-6 text-center">
+            <a href="/programme" class="inline-block bg-pink-500 text-white py-2 px-6 rounded-md hover:bg-pink-700 transition">
+              Retour au programme
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

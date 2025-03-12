@@ -14,17 +14,16 @@ const { ...film } = Astro.props;
                 <div class="absolute -top-2 -left-2 w-full h-full bg-white/10 rounded-[1.5em] shadow-md"></div>
 
 
-<img src={film.affiche} alt={film.Titre_film} 
+<img src={film.affiche_film} alt={film.Titre_film} 
     class="w-full h-[18rem] object-cover rounded-[1em] border-2 border-pink-500 shadow-md" />
 
              
                 <div class="relative text-center">
                     <h3 class="text-lg font-mono">{film.Titre_film}</h3>
-                    <p class="text-sm opacity-80">{film.description}</p>
                 </div>
 
               
-                <a href={`/films/${film.id}`} 
+                <a href={`/programme/${film.id}`} 
                     class="mt-auto px-4 py-2 bg-pink-500 text-violet-950 font-bold text-sm rounded-lg transition duration-200 hover:bg-violet-200 text-center">
                     Voir plus
                 </a>

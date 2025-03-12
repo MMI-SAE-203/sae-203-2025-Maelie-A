@@ -4,13 +4,13 @@ const pb = new PocketBase("http://127.0.0.1:8090");
 
 export async function getFilm() {
   try {
-    let Film = await pb.collection("Films").getFullList({
-      sort: "date_projection",
+    let Film = await pb.collection("Film").getFullList({
+      sort: "dateProjection",
     });
 
-    const updatedFilm = Film.map((film) => ({
-      ...film,
-      affiche: film.affiche ? pb.files.getUrl(film, film.affiche) : null,
+    const updatedFilm = Film.map((Film) => ({
+      ...Film,
+      affiche: Film.affiche ? pb.files.getUrl(Film, Film.affiche_film) : null,
     }));
 
     return updatedFilm; // Correction ici : on retourne updatedFilm au lieu de updatedMovies

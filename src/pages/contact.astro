@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contactez-Nous" description="Restons en contact avec le Lionimation Festival !">
+
+<section class="w-full px-4 sm:px-6 lg:px-12 py-10 text-purple-950">
+    <!-- Titre Principal -->
+    <h1 class="text-3xl sm:text-5xl md:text-5xl font-sans text-pink-500 p-4 uppercase text-center">
+        Contactez-Nous
+    </h1>
+
+    <!-- Sous-titre -->
+    <h2 class="text-2xl sm:text-2xl font-sans text-center my-4">Restons en contact !</h2>
+    <p class="text-md font-sans text-center mb-6">Envoyez-nous un message</p>
+
+    <!-- Formulaire de contact -->
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <form class="space-y-4">
+            <!-- Nom/Prénom -->
+            <div>
+                <label class="block font-sans mb-1">Nom/Prénom</label>
+                <input type="text" placeholder="Entrez votre Nom"
+                    class="w-full p-3 font-mono border-2 border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-950">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="block font-sans mb-1">Email</label>
+                <input type="email" placeholder="Entrez votre adresse Email"
+                    class="w-full p-3  font-mono border-2 border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-950">
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label class="block font-sans mb-1">Message</label>
+                <textarea rows="4" placeholder="Entrez votre message"
+                    class="w-full p-3 font-mono border-2 border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-950"></textarea>
+            </div>
+
+            <!-- Bouton d'envoi -->
+            <button type="submit"
+                class="w-full bg-purple-950 text-white font-bold py-3 rounded-lg hover:bg-pink-500 transition">
+                Envoyer mon message
+            </button>
+        </form>
+    </div>
+
+    <!-- FAQ -->
+    <div class="max-w-3xl mx-auto mt-12">
+        <h2 class="text-3xl font-sans mb-4 text-purple-950">FAQ - Questions Fréquentes</h2>
+
+        <!-- Question 1 -->
+        <div class="mb-4">
+            <h3 class="font-sans text-lg text-purple-950">1. Où et quand se déroule le Lionimation Festival ?</h3>
+            <p class="font-mono"> Le festival se tient à Belfort du 10 au 17 juin 2025, avec des projections au Cinéma Kinépolis et en plein air à la Place d’Armes.</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">2. Où acheter mes billets ?</h3>
+            <p class="font-mono"> Les billets sont disponibles sur notre site officiel et aux points d’accueil du festival.</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">3. Y a-t-il des projections gratuites ?</h3>
+            <p class="font-mono"> Oui, toutes les projections en plein air sont gratuites et accessibles à tous.</p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">4. Comment s’inscrire aux ateliers ?</h3>
+            <p class="font-mono"> Les inscriptions se font en ligne ou à l’accueil du festival, sous réserve de places disponibles.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">5. Le festival est-il adapté aux enfants ?</h3>
+            <p class="font-mono"> Oui, certains films et ateliers sont spécialement conçus pour eux. Consultez le programme pour plus de détails.</p>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">6. Comment venir au festival ?</h3>
+            <p class="font-mono"> Belfort est accessible en train, voiture et covoiturage. Des parkings sont disponibles à proximité des lieux du festival.</p>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">7. Comment contacter l’équipe du festival ?</h3>
+            <p class="font-mono"> Via le formulaire de contact sur cette page ou par email à <a href="mailto:contact@lionimationfestival.com"
+                    class="text-pink-500 font-bold">contact@lionimationfestival.com</a>.</p>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="mb-4">
+            <h3 class="font-bold text-lg text-purple-950">8. Où suivre les actualités du festival ?</h3>
+            <p class="font-mono">
+                Sur nos réseaux sociaux :<br>
+                <strong>Instagram :</strong> <span class="text-pink-500">@LionimationFestival</span> <br>
+                <strong>Facebook :</strong> <span class="text-pink-500">@Lionimation Festival</span> <br>
+                <strong>Youtube :</strong> <span class="text-pink-500">@LionimationFestival</span> <br>
+            </p>
+        </div>
+    </div>
+</section>
+
+</Layout>
