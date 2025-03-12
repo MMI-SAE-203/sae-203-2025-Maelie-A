@@ -10,8 +10,13 @@ export async function getFilm() {
 
     const updatedFilm = Film.map((Film) => ({
       ...Film,
-      affiche: Film.affiche ? pb.files.getUrl(Film, Film.affiche_film) : null,
+      imageUrl: Film.affiche_film 
+      ? pb.files.getUrl(Film, Film.affiche_film, { thumb: "1024x1024"})
+      :"placeholder.svg",
+
     }));
+
+    console.log("Liste des films", updatedFilm);
 
     return updatedFilm; // Correction ici : on retourne updatedFilm au lieu de updatedMovies
   } catch (error) {
@@ -19,6 +24,28 @@ export async function getFilm() {
     return [];
   }
 }
+
+// Récupérer les infos d'un film par son ID avec image URL
+export async function getFilmById(id) {
+  try {
+    const film = await pb.collection("Film").getOne(id);
+
+    if (!film) return null;
+
+    return {
+      ...film,
+      imageUrl: film.affiche_film
+        ? pb.files.getUrl(film, film.affiche_film, { thumb: "1024x1024" })
+        : "placeholder.svg",
+    };
+  } catch (error) {
+    console.error("Erreur lors de la récupération du film", error);
+    return null;
+  }
+}
+
+
+
 
 
 // Récupérer tous les films triés par date de projection
