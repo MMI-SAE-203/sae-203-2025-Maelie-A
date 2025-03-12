@@ -68,41 +68,9 @@
 // }
 
 // // Tester la récupération des activités d’un animateur par nom
-// import { getActivitiesByAnimatorName } from "./backend.mjs";
-// try {
-//   const activitiesByName = await getActivitiesByAnimatorName("Roiland");
-//   console.log("Activités de l'animateur (Nom):", activitiesByName);
-// } catch (e) {
-//   console.error(e);
-// }
 
 
 
 // Tester les ajouts, modifications et suppressions
 
-// Fonction pour ajouter un film
-// import { addFilm } from "./backend.mjs";
-// const newFilm = {
-//   Titre_film: "Nouveau Film",
-//   realisateur: "Réalisateur",
-//   dateProjection: "2025-01-01",
-//   synopsis: "Action",
-// };
 
-//tester les ajouts d'activites
-// import { addActivity } from "./backend.mjs";
-// const newActivity = {
-//   Nom_activite: "Nouvelle Activité",
-//   Invite_associe: "Invité",
-//   date_heure_activite: "2025-01-01",
-//   type_activite: "Action",
-// };
-
-// tester l'ajout est un acteur ou réalisateur
-// import { addInvites } from "./backend.mjs";
-// const newInvites = {
-//   Nom: "Nouveau Invité",
-//   Prenom: "Prenom",  
-//     Date_naissance: "2025-01-01",
-//     Nationalite: "Action",
-// };  

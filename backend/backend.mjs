@@ -100,28 +100,12 @@ export async function getActivitiesByAnimatorId(id) {
 }
 
 // Récupérer toutes les activités d’un animateur donné par son nom
-export async function getActivitiesByAnimatorName(Nom) {
-  const Activite = await pb.collection("Invites").getFullList(`Nom = "${Nom}"`);
-    return await getActivitiesByAnimatorId(Activite.id);
-}
+
 
 
 
 
 // Tester les ajouts, modifications et suppressions
 
-// Ajouter un film
-export async function addFilm(filmData) {
-    return await pb.collection("Film").create(filmData);
-}
 
-// Ajouter une activité
-export async function addActivity(activityData) {
-    return await pb.collection("activite").create(activityData);
-}
-
-// Ajouter un acteur ou réalisateur
-export async function addinvites(invitesData) {
-    return await pb.collection("invites").create(invitesData);
-}
 
