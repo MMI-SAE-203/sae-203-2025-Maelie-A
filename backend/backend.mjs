@@ -1,6 +1,26 @@
 import PocketBase from "pocketbase";
 const pb = new PocketBase("http://127.0.0.1:8090");
 
+
+export async function getFilm() {
+  try {
+    let Film = await pb.collection("Films").getFullList({
+      sort: "date_projection",
+    });
+
+    const updatedFilm = Film.map((film) => ({
+      ...film,
+      affiche: film.affiche ? pb.files.getUrl(film, film.affiche) : null,
+    }));
+
+    return updatedFilm; // Correction ici : on retourne updatedFilm au lieu de updatedMovies
+  } catch (error) {
+    console.log("Une erreur est survenue en lisant la liste des films", error);
+    return [];
+  }
+}
+
+
 // Récupérer tous les films triés par date de projection
 export async function getAllFilms() {
   return await pb.collection("Film").getFullList({

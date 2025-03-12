@@ -9,7 +9,9 @@ const currentPath = Astro.url.pathname;
 <header class="fixed top-0 left-0 w-full flex items-center justify-between gap-8 border-b-2 border-b-pink-500 h-20 bg-purple-950 text-white z-50">
 
 <div class="self-center mt-1">
-  <img src={Logo.src} alt="Lionimation Festival" class="w-20 h-auto" />
+  <a href="/">
+    <img src={Logo.src} alt="Lionimation Festival" class="w-20 h-auto" />
+  </a>
 </div>
 
 
@@ -25,7 +27,7 @@ const currentPath = Astro.url.pathname;
     <span class="group-aria-expanded:-translate-y-[5px] group-aria-expanded:-rotate-45"></span>
   </button>
 <nav id="menu"
-  class="w-full flex-1 px-6 py-12 flex justify-between top-20 flex-col fixed z-40 inset-0 bg-purple-950 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:top-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
+  class="no-scroll w-full flex-1 px-6 py-12 flex justify-between top-20 flex-col fixed z-40 inset-0 bg-purple-950 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:top-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
   aria-hidden="true"
 >
 

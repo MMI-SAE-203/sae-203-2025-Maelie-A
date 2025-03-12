@@ -1,62 +1,81 @@
 ---
-import LayoutWithHero from '../layouts/Layout.astro';
-import imgHero from '../assets/img/page-enseignements.jpg';
-
-const title = "Enseignements";
-const description = "Le Conservatoire Henri Dutilleux de Belfort est une institution dédiée à l'enseignement artistique, offrant des formations en musique, danse et théâtre.";
+import Layout from '../layouts/Layout.astro';
+import Logo from '../assets/Logo.svg';
+import Carousel from '../components/carrousel.astro';
+import lorena from '../assets/lorena.avif';
+import cine2 from '../assets/cine2.avif';
+import cine from '../assets/cine.avif';
 ---
-<LayoutWithHero title={title} description={description} src={imgHero} alt="Orchestre philharmonique">
-	<p slot="chapo">Le Conservatoire Henri Dutilleux de Belfort est une institution dédiée à l'enseignement artistique, offrant des formations en musique, danse et théâtre.</p>
-	<div slot="content">
-		<p>Cet établissement à rayonnement départemental accueille environ 1 500 élèves encadrés par 84 enseignants, répartis sur huit sites au sein de la Communauté de l'Agglomération Belfortaine.</p>
-		<h2>Département de Musique</h2>
-		<p>Le département de musique propose une large palette de disciplines, structurées en plusieurs sections :</p>
-		<h3>Instruments à Vent</h3>
-		<ul>
-			<li><strong>Bois</strong> : Flûte traversière, hautbois, clarinette, saxophone, basson.</li>
-			<li><strong>Cuivres</strong> : Cor d'harmonie, trombone, trompette, tuba-euphonium.</li>
-		</ul>
-		<h3>Instruments à Cordes</h3>
-		<ul>
-			<li><strong>Cordes frottées</strong> : Violon, alto, violoncelle, contrebasse.</li>
-			<li><strong>Cordes pincées</strong> : Guitare, harpe, mandoline.</li>
-		</ul>
-		<h3>Claviers et Polyphoniques</h3>
-		<ul>
-			<li>Piano, orgue, clavecin, accordéon chromatique.</li>
-		</ul>
-		<h3>Musiques Actuelles et Jazz</h3>
-		<ul>
-			<li>Chant amplifié, guitare électrique, guitare basse, contrebasse jazz, saxophone jazz, batterie, piano jazz, guitare jazz.</li>
-		</ul>
-		<h3>Musiques Traditionnelles</h3>
-		<ul>
-			<li>Accordéon diatonique, cornemuse, vielle à roue, violon traditionnel, percussions digitales.</li>
-		</ul>
-		<h3>Musique Ancienne</h3>
-		<ul>
-			<li>Flûte à bec, viole de gambe, traverso, violon baroque, cromornes, trompette naturelle.</li>
-		</ul>
-		<h3>Formation Musicale et Culture</h3>
-		<ul>
-			<li>Éveil musical dès 5 ans, formation musicale, culture musicale, écriture, composition, musique assistée par ordinateur (MAO).</li>
-		</ul>
-		<p>Les cursus sont organisés en cycles, du 1er cycle au cycle spécialisé (DEM), avec des classes à horaires aménagés pour les collégiens.</p>
-		<h2>Département de Danse</h2>
-		<p>Le conservatoire offre un enseignement en danse contemporaine, axé sur le développement technique et artistique des élèves. Le programme inclut :</p>
-		<ul>
-			<li><strong>Éveil et Initiation</strong> : Pour les enfants à partir de 5 ans, introduction aux bases de la danse et à l'expression corporelle.</li>
-			<li><strong>Cours Techniques</strong> : Approfondissement des techniques de danse contemporaine, travail sur la posture, le mouvement et l'improvisation.</li>
-			<li><strong>Ateliers Chorégraphiques</strong> : Création et interprétation de pièces chorégraphiques, favorisant la créativité et l'expression personnelle.</li>
-			<p>Les élèves participent régulièrement à des spectacles et manifestations, mettant en pratique leurs acquis dans des conditions professionnelles.</p>
-		</ul>
-		<h2>Département de Théâtre</h2>
-		<p>Le département de théâtre propose une formation complète, articulée autour de plusieurs axes&nbsp;:</p>
-		<ul>
-			<li><strong>Initiation Théâtrale</strong> : Pour les jeunes élèves, découverte des bases du jeu d'acteur, travail sur la voix, le corps et l'espace scénique.</li>
-			<li><strong>Cours d'Interprétation</strong> : Approfondissement des techniques de jeu, analyse de textes, travail sur différents genres théâtraux.</li>
-			<li><strong>Mise en Scène</strong> : Ateliers dédiés à la création et à la réalisation de spectacles, impliquant les élèves dans toutes les étapes de la production.</li>
-		</ul>
-		<p>Les élèves ont l'opportunité de se produire lors de représentations publiques, enrichissant ainsi leur expérience scénique.</p>
-	</div>
-</LayoutWithHero>
+
+<Layout title="Lionimation Festival" description="Découvrez l'univers magique de l'animation à Belfort !">
+
+<section class="w-full px-4 sm:px-6 lg:px-12 py-10 text-purple-950">
+    <!-- Titre -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-sans text-pink-500 p-4 uppercase text-center">
+        À ProPos
+    </h1>
+
+    <!-- Logo -->
+    <div class="flex justify-center my-8">
+        <img src={Logo.src} alt="Lionimation Festival" class="w-40 sm:w-56 md:w-64 lg:w-72 h-auto max-w-full" />
+    </div>
+
+    <!-- Conteneur général pour les blocs -->
+    <div class="max-w-3xl mx-auto space-y-8">
+        
+        <!-- Histoire du Festival -->
+        <div>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-sans mb-2">Histoire du Festival</h2>
+            <p class="text-md sm:text-lg font-mono leading-relaxed">
+                "Créé en 2015, le Lionimation Festival est devenu une référence dans l’univers de l’animation. 
+                Chaque année, il rassemble créateurs et spectateurs autour d’une passion commune : célébrer 
+                la richesse de l’animation sous toutes ses formes."
+            </p>
+        </div>
+
+        <!-- Organisateurs -->
+        <div>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-sans mb-2">Organisateurs</h2>
+            <ul class="list-disc font-mono pl-6">
+                <li><strong>Directeur :</strong> Maëlie Addario</li>
+                <li><strong>Programmation :</strong> Bryan Menoux</li>
+            </ul>
+        </div>
+
+        <!-- Équipe technique -->
+        <div>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-sans mb-2">Équipe technique</h2>
+            <ul class="list-disc font-mono pl-6">
+                <li><strong>Régisseur :</strong> Camille Norrito</li>
+                <li><strong>Techniciens :</strong> Alice Frelin, Lison Pruvost et Loréna Chevallot</li>
+            </ul>
+        </div>
+
+        <!-- Partenaires -->
+        <div>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-sans mb-2">Partenaires</h2>
+            <ul class="list-disc font-mono pl-6">
+                <li><strong>Institutions :</strong> Ville de Belfort, Région Bourgogne-Franche-Comté</li>
+                <li><strong>Culturels :</strong> Cinéma Kinopolis</li>
+            </ul>
+        </div>
+
+      <!-- Carrousel pour la page À Propos -->
+      <div class="my-8">
+<Carousel images={[lorena.src, cine2.src, cine.scr]} carouselId="carouselApropos" />
+
+      </div>
+
+        <!-- Valeurs Clés -->
+        <div>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-sans mb-2">Valeurs Clés</h2>
+            <ul class="list-disc font-mono pl-6">
+                <li><strong>Éducation :</strong> Sensibilisation au cinéma d’animation.</li>
+                <li><strong>Créativité :</strong> Exploration de techniques variées (stop motion, animation 2D/3D).</li>
+                <li><strong>Accessibilité :</strong> Ateliers et projections adaptés à tous les publics.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</Layout>

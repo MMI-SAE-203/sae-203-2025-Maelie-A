@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/card.astro';
+import { getFilm } from '../../../backend/backend.mjs';
+const Film = await getFilm();
+console.log(Film);
+---
+
+<Layout>
+  <div class="bg-[rgb(238_242_255)]">
+    <div class="container py-20 space-y-8">
+      <h1>Programme</h1>
+
+{Film && Film.length > 0 ? (
+  Film.map((film) => (
+    <Card {...film} />
+  ))
+) : (
+  <p class="text-center text-gray-500">Aucun film trouvé.</p>
+)}
+
+    </div>
+  </div>
+</Layout>

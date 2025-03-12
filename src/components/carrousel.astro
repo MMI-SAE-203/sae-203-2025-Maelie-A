@@ -1,0 +1,54 @@
+<!-- <!-- ---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Swiper from 'swiper/bundle';
+
+const { images = [], carouselId = "defaultCarousel" } = Astro.props;
+---
+
+<div class="carousel-container w-full max-w-4xl mx-auto relative">
+    <div class="swiper" id={carouselId}>
+        <div class="swiper-wrapper">
+            {images.map((img, index) => (
+                <div class="swiper-slide" key={index}>
+                    <img src={img} alt={`Slide ${index + 1}`} class="w-full h-auto rounded-lg object-cover shadow-lg" />
+                </div>
+            ))}
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation buttons with SVG icons -->
+        <div class="swiper-button-prev">
+            <svg class="w-10 h-10 text-white hover:text-pink-500 transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M15.707 19.293a1 1 0 010-1.414L10.414 12l5.293-5.293a1 1 0 00-1.414-1.414l-6 6a1 1 0 000 1.414l6 6a1 1 0 001.414 0z" clip-rule="evenodd"/>
+            </svg>
+        </div>
+
+        <div class="swiper-button-next">
+            <svg class="w-10 h-10 text-white hover:text-pink-500 transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M8.293 4.707a1 1 0 011.414 0L15 10.586l5.293-5.293a1 1 0 011.414 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(`#${carouselId}`, {
+      loop: true,
+      spaceBetween: 20,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: `#${carouselId} .swiper-button-next`,
+        prevEl: `#${carouselId} .swiper-button-prev`,
+      },
+      pagination: {
+        el: `#${carouselId} .swiper-pagination`,
+        clickable: true,
+      },
+    });
+  });
+</script> 
