@@ -11,10 +11,9 @@ export async function getFilm() {
 
     const updatedFilm = Film.map((Film) => ({
       ...Film,
-      imageUrl: Film.affiche_film 
-      ? pb.files.getUrl(Film, Film.affiche_film, { thumb: "1024x1024"})
-      :"placeholder.svg",
-
+      imageUrl: Film.affiche_film
+        ? pb.files.getUrl(Film, Film.affiche_film, { thumb: "1024x1024" })
+        : "placeholder.svg",
     }));
 
     console.log("Liste des films", updatedFilm);
@@ -26,7 +25,50 @@ export async function getFilm() {
   }
 }
 
+//routes dynamiques pour les invités
 
+export async function getInvite() {
+  try {
+    let Invites = await pb.collection("Invites").getFullList({
+      sort: "Nom",
+    });
+
+    const updatedInvites = Invites.map((invite) => ({
+      ...invite,
+      imageUrl: invite.photo_invites
+        ? pb.files.getUrl(invite, invite.photo_invites, { thumb: "1024x1024" })
+        : "placeholder.svg",
+    }));
+
+    console.log("Liste des invités", updatedInvites);
+
+    return updatedInvites;
+  } catch (error) {
+    console.log(
+      "Une erreur est survenue en lisant la liste des invités",
+      error
+    );
+    return [];
+  }
+}
+
+export async function getinvitesById(id) {
+  try {
+    let invite = await pb.collection("Invites").getOne(id);
+    invite.imageUrl = pb.files.getURL(invite, invite.photo_invites);
+    console.log("Invité trouvé", invite);
+
+    if (!invite) {
+      console.log("Aucun invité trouvé !");
+      return null;
+    }
+
+    return invite;
+  } catch (error) {
+    console.log("Erreur lors de la récupération de l'invité :", error);
+    return null;
+  }
+}
 
 // Récupérer les infos d'un film par son ID avec image URL
 export async function getFilmById(id) {
@@ -46,10 +88,6 @@ export async function getFilmById(id) {
     return null;
   }
 }
-
-
-
-
 
 // Récupérer tous les films triés par date de projection
 export async function getAllFilms() {
@@ -75,24 +113,10 @@ export async function getAllInvites() {
   return Invites;
 }
 
-// Récupérer les infos d'un film par son ID
-export async function getFilmById(id) {
-  return await pb.collection("Film").getOne(id);
-  return Film;
-}
-
-
-
 // Récupérer les infos d'une activité par son ID
 export async function getActivityById(id) {
   return await pb.collection("activite").getOne(id);
-    return activite;
-}
-
-// Récupérer les infos d'un acteur ou réalisateur par son ID
-export async function getinvitesById(id) {
-  return await pb.collection("invites").getOne(id);
-  return invites;
+  return activite;
 }
 
 // Récupérer toutes les activités d’un animateur donné par son ID
@@ -118,63 +142,49 @@ export async function getActivitiesByAnimatorName(name) {
   return await getActivitiesByAnimatorId(invite.id);
 }
 
-
-
-
-
 // Tester les ajouts, modifications et suppressions
-
 
 // Ajouter un nouveau film
 export async function addNewFilm(newFilm) {
-   await pb.collection('Film').create(newFilm);
+  await pb.collection("Film").create(newFilm);
 }
-
 
 // Ajouter une nouvelle activité
 export async function addNewActivite(newActivity) {
-   await pb.collection('activite').create(newActivity);
+  await pb.collection("activite").create(newActivity);
 }
-
 
 // Ajouter un nouvel invité
 export async function addNewInvite(newInvite) {
-   await pb.collection('Invites').create(newInvite);
+  await pb.collection("Invites").create(newInvite);
 }
-
 
 // Supprimer un film par ID
 export async function deleteFilmById(id) {
-   await pb.collection('Film').delete(id);
+  await pb.collection("Film").delete(id);
 }
-
 
 // Supprimer une activité par ID
 export async function deleteActivityById(id) {
-   await pb.collection('activite').delete(id);
+  await pb.collection("activite").delete(id);
 }
-
 
 // Supprimer un invité par ID
 export async function deleteInviteById(id) {
-   await pb.collection('Invites').delete(id);
+  await pb.collection("Invites").delete(id);
 }
 
 // Modifier un film par ID
 export async function updateFilmById(id, data) {
-   await pb.collection('Films').update(id, data);
+  await pb.collection("Films").update(id, data);
 }
-
 
 // Modifier une activité par ID
 export async function updateActivityById(id, data) {
-   await pb.collection('activite').update(id, data);
+  await pb.collection("activite").update(id, data);
 }
-
 
 // Modifier un invité par ID
 export async function updateInviteById(id, data) {
-   await pb.collection('Invites').update(id, data);
+  await pb.collection("Invites").update(id, data);
 }
-
-

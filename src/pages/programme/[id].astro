@@ -12,8 +12,20 @@ if (!film) {
 
 <Layout>
   <div class="bg-white min-h-screen flex items-center justify-center mt-6 mb-6 px-4">
+
+    <!-- Image en arrière-plan avec flou -->
+        {film.imageUrl && (
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center blur-xl opacity-80"
+                style={`background-image: url('${film.imageUrl}');`}>
+            </div>
+        )}
+
+        <!--  Contenu principal avec effet de verre dépoli -->
+        <div class="relative bg-purple-950/90 text-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full backdrop-blur-md border border-white/20">
+            <div class="flex flex-col md:flex-row"></div>
     <div class="bg-purple-950 text-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
       <div class="flex flex-col md:flex-row">
+        
         <!-- Image du film -->
         <div class="md:w-1/3 w-full">
 {film.imageUrl ? (
@@ -29,7 +41,7 @@ if (!film) {
         
         <!-- Détails du film -->
         <div class="md:w-2/3 w-full p-6">
-          <h1 class="text-4xl font-sans text-pink-500 mb-2 text-center md:text-left">
+          <h1 class="text-5xl font-sans text-pink-500 mb-2 text-center md:text-left">
             {film.Titre_film}
           </h1>
         <p class="text-1xl font-mono text-gray-300 mb-4 text-center md:text-left">
@@ -47,23 +59,27 @@ if (!film) {
 
           <!-- Synopsis -->
           <div class="mb-6">
-            <h2 class="text-xl font-sans text-orange-400 mb-2">Synopsis</h2>
-            <p class="text-1xl font-mono text-gray-300 mb-4 text-center md:text-left" set:html={film.synopsis}></p>
+            <h2 class=" text-4xl text-1xl font-sans text-orange-400 mb-2">Synopsis</h2>
+            <div class="prose prose-invert text-gray-300 text-xl font-mono">
+  <p set:html={film.synopsis}></p>
+</div>
+
           </div>
 
           <!-- Informations -->
           <div class="mb-6">
-            <h2 class="text-xl font-sans text-pink-500 mb-2">Informations</h2>
-            <ul class="space-y-2 text-gray-200">
-              <li><span class="font-medium">Réalisateur :</span> {film.realisateur}</li>
-              <li><span class="font-medium">Personnages :</span> {film.liste_personnages}</li>
-              <li><span class="font-medium">Date de publication :</span> {film.date_publication}</li>
-            </ul>
+            <h2 class="text-3xl font-sans text-green-400 mb-2">Informations</h2>
+<ul class="prose prose-invert text-gray-200 text-lg space-y-2">
+  <li><span class="text-pink-500 font-semibold">Réalisateur :</span> <span class="font-mono">{film.realisateur}</span></li>
+  <li><span class="text-pink-500 font-semibold">Personnages :</span> <span class="font-mono">{film.liste_personnages}</span></li>
+  <li><span class="text-pink-500 font-semibold">Date de publication :</span> <span class="font-mono">{film.date_publication}</span></li>
+</ul>
+
           </div>
 
           <!-- Bouton de retour -->
           <div class="mt-6 text-center">
-            <a href="/programme" class="inline-block bg-pink-500 text-white py-2 px-6 rounded-md hover:bg-pink-700 transition">
+            <a href="/programme" class="inline-block bg-pink-500 text-white font-mono py-2 px-6 rounded-md hover:bg-pink-700 transition">
               Retour au programme
             </a>
           </div>
