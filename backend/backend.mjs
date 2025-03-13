@@ -1,6 +1,7 @@
 import PocketBase from "pocketbase";
 const pb = new PocketBase("http://127.0.0.1:8090");
 
+//routes dynaliques pour les films
 
 export async function getFilm() {
   try {
@@ -24,6 +25,8 @@ export async function getFilm() {
     return [];
   }
 }
+
+
 
 // Récupérer les infos d'un film par son ID avec image URL
 export async function getFilmById(id) {
@@ -100,6 +103,20 @@ export async function getActivitiesByAnimatorId(id) {
 }
 
 // Récupérer toutes les activités d’un animateur donné par son nom
+export async function getActivitiesByAnimatorId(InviteId) {
+  const activities = await pb.collection("activite").getFullList({
+    filter: `invite_associe = '${InviteId}'`,
+  });
+  return activities;
+}
+
+// Liste des activités d’un animateur par nom
+export async function getActivitiesByAnimatorName(name) {
+  const invite = await pb
+    .collection("Invites")
+    .getFirstListItem(`nom = "${name}"`);
+  return await getActivitiesByAnimatorId(invite.id);
+}
 
 
 
@@ -107,5 +124,57 @@ export async function getActivitiesByAnimatorId(id) {
 
 // Tester les ajouts, modifications et suppressions
 
+
+// Ajouter un nouveau film
+export async function addNewFilm(newFilm) {
+   await pb.collection('Film').create(newFilm);
+}
+
+
+// Ajouter une nouvelle activité
+export async function addNewActivite(newActivity) {
+   await pb.collection('activite').create(newActivity);
+}
+
+
+// Ajouter un nouvel invité
+export async function addNewInvite(newInvite) {
+   await pb.collection('Invites').create(newInvite);
+}
+
+
+// Supprimer un film par ID
+export async function deleteFilmById(id) {
+   await pb.collection('Film').delete(id);
+}
+
+
+// Supprimer une activité par ID
+export async function deleteActivityById(id) {
+   await pb.collection('activite').delete(id);
+}
+
+
+// Supprimer un invité par ID
+export async function deleteInviteById(id) {
+   await pb.collection('Invites').delete(id);
+}
+
+// Modifier un film par ID
+export async function updateFilmById(id, data) {
+   await pb.collection('Films').update(id, data);
+}
+
+
+// Modifier une activité par ID
+export async function updateActivityById(id, data) {
+   await pb.collection('activite').update(id, data);
+}
+
+
+// Modifier un invité par ID
+export async function updateInviteById(id, data) {
+   await pb.collection('Invites').update(id, data);
+}
 
 
