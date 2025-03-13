@@ -1,5 +1,5 @@
 import PocketBase from "pocketbase";
-const pb = new PocketBase("http://127.0.0.1:8090");
+const pb = new PocketBase("https://pb-sae-203.maelie-addario.fr:443");
 
 //routes dynaliques pour les films
 
