@@ -120,11 +120,11 @@ export async function getActivityById(id) {
 }
 
 // Récupérer toutes les activités d’un animateur donné par son ID
-export async function getActivitiesByAnimatorId(id) {
-  return await pb.collection("activite").getFullList({
-    filter: `Invite_associe = "${id}"`,
-  });
-}
+// export async function getActivitiesByAnimatorId(id) {
+//   return await pb.collection("activite").getFullList({
+//     filter: `Invite_associe = "${id}"`,
+//   });
+// }
 
 // Récupérer toutes les activités d’un animateur donné par son nom
 export async function getActivitiesByAnimatorId(InviteId) {
